@@ -41,6 +41,8 @@
 #include <unistd.h>
 #include "defs.h"
 
+char *__progname;
+
 char dflag;
 char lflag;
 char rflag;
@@ -367,6 +369,7 @@ int
 main(int argc, char *argv[])
 {
     set_signals();
+    __progname = argv[0];
     getargs(argc, argv);
     open_files();
     reader();
